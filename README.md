@@ -1,51 +1,55 @@
 # Real-Time Chat Application Chit Chat
 
-A simple chat application where multiple users can send messages in real time. Built using **Node.js**, **Express**, and **WebSocket**.
+This is a simple real-time chat application built using **Node.js**, **Express**, and **WebSocket**. It allows multiple users to communicate in a shared chatroom.
 
-## How to Run
+## Features
+- Real-time messaging using WebSockets.
+- Dynamic username input for personalized chat messages.
+- Secure WebSocket communication (`wss://`) when served over HTTPS.
+- Responsive and minimalistic UI for sending and receiving messages.
 
-1. Clone the repository and navigate to the project folder:
+## How to Run the Application
+1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone <repository_link>
+   cd <repository_folder>
    ```
-2. Install dependencies:
+
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
 
-3. Start the server:
+3. **Start the Server**:
    ```bash
-   node server/server.js
+   npm start
    ```
+   The server will run on `http://localhost:3000`.
 
-4. Open your browser and go to `http://localhost:3000`.
+4. **Open the Application**:
+   Open your browser and navigate to `http://localhost:3000`.
+
+## Application Architecture
+1. **Backend**:
+   - Built with Node.js and Express to serve static files and handle WebSocket connections.
+   - WebSocket Server (`ws`) manages real-time communication.
+   - Concurrent client connections are handled using WebSocket's built-in capabilities.
+
+2. **Frontend**:
+   - A simple HTML/JavaScript client sends and receives WebSocket messages.
+   - Allows users to input their username and dynamically updates the chat.
+
+## Deployment
+The application is deployed on Render and accessible via https://kuvaka-backend-assignment.onrender.com/.
+
+## Assumptions & Design Choices
+1. Users provide their names at the start; anonymous names are not allowed.
+2. Secure WebSocket communication (`wss://`) is automatically used for HTTPS.
+3. A simple text-based UI was chosen to focus on core functionality.
+
+## How to Access the Application
+1. Visit the deployment link: https://kuvaka-backend-assignment.onrender.com/
+2. Enter your name to join the chatroom.
+3. Start chatting in real-time!
 
 ---
-
-## How It Works
-
-1. **Server**:
-   - Handles WebSocket connections from clients.
-   - Broadcasts messages to all users except the sender.
-   - Users can set their names, which are displayed in the chat.
-
-2. **Client**:
-   - Connects to the server using WebSocket.
-   - Allows users to enter their name before chatting.
-   - Displays messages from others in real-time.
-
----
-
-## Key Points
-
-- Written using only basic libraries: **Express** for serving static files and **WebSocket** for real-time communication.
-- Chat messages are sent as JSON to include both the user’s name and their message.
-- Names are required to join the chat; the default is "Anonymous" if none is entered.
-
----
-
-### Built By
-
-Rishabh soni  
-MITS Gwalior M.P.  
