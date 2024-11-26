@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Real-Time Chat</title>
+  </head>
+  <body>
+    <h1>Chit Chat</h1>
+    <div id="name-container">
+      <label for="username">Enter your name:</label>
+      <input type="text" id="username" placeholder="Enter your name" />
+      <button id="name-submit">Submit</button>
+    </div>
+    <div class="chat-container" style="display: none">
+      <div class="chat-header">Real-Time Chat</div>
+      <div class="chat-messages" id="messages"></div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
